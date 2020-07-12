@@ -14,7 +14,7 @@ const greeting = (langCode) => {
         return parsedResponse.data; 
     })
     .catch((err) => {
-        return err.error? JSON.parse(err.error) : err;
+        return err.error ? JSON.parse(err.error) : err;
     })
 };
 
