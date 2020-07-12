@@ -5,7 +5,10 @@
 const request = require('request-promise');
 
 const testGreeting = () => {
-  return request('https://journeyedu.herokuapp.com/hello') // 1
+  return new Promise((resolve, reject) => {
+    resolve(request('https://journeyedu.herokuapp.com/hello'));
+    reject('Failed to request API');
+   }) // 1
     .then((response) => {
       return JSON.parse(response); // 2
     })
